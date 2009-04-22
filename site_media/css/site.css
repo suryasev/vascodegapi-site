@@ -254,6 +254,6 @@ em {
 }
 
 form p {
-    color: #333;
+    color: #111 !important;
     display: block;
 }
