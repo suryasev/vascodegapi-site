@@ -267,7 +267,13 @@ em {
 	text-align: left;
 }
 
+form {
+    min-width: 600px;
+    width: 600px;
+}
 form p {
     color: #111 !important;
     display: block;
+    min-width: 600px;
+    width: 600px;
 }
