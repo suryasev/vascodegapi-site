@@ -31,6 +31,10 @@ a:hover {
     color: white;
     background-color: #916E49;
 }
+#menu a:hover {
+    color: #916E49;
+    background-color: transparent;
+}
 ul.errorlist li {
     font-size: 120%;
     background-color: white;
