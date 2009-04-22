@@ -24,6 +24,20 @@ p {
     font-size: 0.9em;
     margin-bottom: 0.9em;
 }
+a {
+    color: #916E49;
+}
+a:hover {
+    color: white;
+    background-color: #916E49;
+}
+ul.errorlist li {
+    font-size: 120%;
+    background-color: white;
+    color: #009;
+    padding: 10px;
+    margin-bottom: 20px;
+}
 
 
 #header {
