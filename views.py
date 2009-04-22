@@ -241,7 +241,7 @@ def download_file(request):
     feed = g.GetData(ids='ga:%s' % parameters['profiles'], 
                         dimensions=','.join(['%s' % d.name for d in parameters['dimensions']]),
                         metrics=','.join(['%s' % m.name for m in parameters['metrics']]),
-                        sort='-%s' % (parameters['sort'] or parameters['metrics']).name,
+                        sort='-%s' % (parameters['sort'] or parameters['metrics'][0]).name,
                         filters=','.join(['%s==%s' % (key, value) for key, value in filters.iteritems() if value]),
                         start_date=parameters['start_date'].strftime('%Y-%m-%d'),
                         end_date=parameters['end_date'].strftime('%Y-%m-%d'),
