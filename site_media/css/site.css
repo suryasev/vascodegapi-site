@@ -26,6 +26,7 @@ p {
 }
 a {
     color: #4E3B26;
+    text-decoration: underline;
 }
 a:hover {
     color: white;
