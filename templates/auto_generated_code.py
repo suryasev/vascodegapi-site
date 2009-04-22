@@ -17,8 +17,8 @@
 #
 # This script requires the installation of Google's gdata module
 # and the Analytics gdata patch from Juice Analytics Inc.
-# To see the installation instructions for the Analytics gdata patch, 
-# go to {{ page_url }}/installation_instructions/
+# To see the installation instructions for the dgapi (gdata.analytics), 
+# module, go to http://suryasev.github.com/python-degapi/
 
 
 # __original_authors__ = ['kunalmshah.userid (Kunal Shah)', 'suryasev.userid (Sal Uryasev)']
