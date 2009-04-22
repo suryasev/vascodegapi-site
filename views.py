@@ -38,7 +38,7 @@ def successful_connect_google_analytics(request):
     """
     if request.method == 'GET':
         if 'oauth_token' in request.GET:
-            if 'ga_controller' not in request.session or not pickle.loads(request.session['ga_controller']).token_upgraded:
+            if 'ga_controller' not in request.session:
                 return HttpResponseRedirect('/redirect_google_analytics/')
             g = pickle.loads(request.session['ga_controller'])
             access_token = g.upgrade_token()
