@@ -72,10 +72,11 @@ ul.errorlist li {
     left: 10px;
     width: 288px;
     height: 70px;
-    background-image: url(../images/vascodegapi_logo.png);
+    background-color: #fff;
+/*    background-image: url(../images/vascodegapi_logo.png);
     background-repeat: no-repeat;
     background-position: left;
-    border: 0px solid #ccc;
+*/    border: 0px solid #ccc;
 }
 #header-inner #menu {
     position: absolute;

@@ -119,7 +119,7 @@ class DimensionSelectForm(forms.Form):
                     
             for m2 in metrics:
                 if not d1.compatable_with(m2):
-                    match_errors += ["Aieeee! Dimension %s is not compatible with metric %s." % (d1, m2)]
+                    match_errors += ["Caraca! Dimension %s is not compatible with metric %s." % (d1, m2)]
                     
             for f2_key, f2_value in filters.iteritems():
                 if f2_value and not d1.compatable_with(f2_key):
