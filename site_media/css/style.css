@@ -10,9 +10,9 @@ body
 
 #hor-minimalist-a
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-family: Fertigo, Helvetica, Arial, "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
-	background: #fff;
+	background: #FFFEFA;
 	margin: 45px;
 	width: 480px;
 	border-collapse: collapse;
@@ -29,11 +29,12 @@ body
 #hor-minimalist-a td
 {
 	color: #669;
-	padding: 9px 8px 0px 8px;
+	padding: 9px 4px 0px 4px;
 }
 #hor-minimalist-a tbody tr:hover td
 {
-	color: #009;
+	color: #003;
+	background-color: #F2E7D0;
 }
 
 
@@ -97,7 +98,7 @@ body
 
 #box-table-a
 {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-family: Fertigo, "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	margin: 45px;
 	width: 480px;

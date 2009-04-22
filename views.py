@@ -115,25 +115,25 @@ class DimensionSelectForm(forms.Form):
             d1 = dimensions.pop()
             for d2 in dimensions:
                 if not d1.compatable_with(d2):
-                    match_errors += ["Dimension %s is not compatible with dimension %s." % (d1, d2)]
+                    match_errors += ["Puxa vida! Dimension %s is not compatible with dimension %s." % (d1, d2)]
                     
             for m2 in metrics:
                 if not d1.compatable_with(m2):
-                    match_errors += ["Dimension %s is not compatible with metric %s." % (d1, m2)]
+                    match_errors += ["Aieeee! Dimension %s is not compatible with metric %s." % (d1, m2)]
                     
             for f2_key, f2_value in filters.iteritems():
                 if f2_value and not d1.compatable_with(f2_key):
-                    match_errors += ["Dimension %s is not compatible with filter %s." % (d1, f2_key)]
+                    match_errors += ["Caraca! Dimension %s is not compatible with filter %s." % (d1, f2_key)]
                     
         while metrics:
             m1 = metrics.pop()
             for m2 in metrics:
                 if not m1.compatable_with(m2):
-                    match_errors += ["Metric %s is not compatible with metric %s." % (m1, m2)]
+                    match_errors += ["Puxa! Metric %s is not compatible with metric %s." % (m1, m2)]
                     
             for f2_key, f2_value in filters.iteritems():
                 if f2_value and not d1.compatable_with(f2_key):
-                    match_errors += ["Dimension %s is not compatible with filter %s." % (d1, f2_key)]
+                    match_errors += ["Puxa vida! Dimension %s is not compatible with filter %s." % (d1, f2_key)]
         
          
         while filters:
@@ -142,7 +142,7 @@ class DimensionSelectForm(forms.Form):
                 continue
             for f2_key, f2_value in filters.iteritems():
                 if f2_value and f1_key.compatable_with(f2_key):
-                    match_errors += ["Filter %s is not compatible with filter %s." % (f1_key, f2_key)]
+                    match_errors += ["Caraca! Filter %s is not compatible with filter %s." % (f1_key, f2_key)]
             
         if match_errors:
             raise forms.ValidationError('<br>\n'.join(match_errors))
