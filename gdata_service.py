@@ -43,6 +43,8 @@ class DjangoGoogleAnalyticsService(gdata.analytics.service.AnalyticsDataService)
         
         self.site_id = 0
         
+        self.token_upgraded = False
+        
         super(DjangoGoogleAnalyticsService, self).__init__()
         self.SetOAuthInputParameters(
             gdata.auth.OAuthSignatureMethod.HMAC_SHA1,
@@ -56,6 +58,7 @@ class DjangoGoogleAnalyticsService(gdata.analytics.service.AnalyticsDataService)
         """
         request_token = self.FetchOAuthRequestToken()
         self.SetOAuthToken(request_token)
+        self.token_upgraded = False
         return True
         
     def authorization_url(self):
@@ -86,6 +89,7 @@ class DjangoGoogleAnalyticsService(gdata.analytics.service.AnalyticsDataService)
         # return self.SetOAuthToken(authorized_request_token)
         try:
             self.UpgradeToOAuthAccessToken()
+            self.token_upgraded = True
             return True
             # return self.token_store.find_token(request_token.scopes[0])
         except gdata.service.TokenUpgradeFailed:

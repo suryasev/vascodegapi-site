@@ -38,7 +38,7 @@ def successful_connect_google_analytics(request):
     """
     if request.method == 'GET':
         if 'oauth_token' in request.GET:
-            if 'ga_controller' not in request.session:
+            if 'ga_controller' not in request.session or not pickle.loads(request.session['ga_controller']).token_upgraded:
                 return HttpResponseRedirect('/redirect_google_analytics/')
             g = pickle.loads(request.session['ga_controller'])
             access_token = g.upgrade_token()
@@ -153,6 +153,9 @@ class DimensionSelectForm(forms.Form):
         return self.cleaned_data.get('name', False) or self.name_lookup.get(self.cleaned_data.get('profiles', 0),'Default')
                     
 def api_call(request):
+    if 'ga_controller' not in request.session or not pickle.loads(request.session['ga_controller']).token_upgraded:
+        return HttpResponseRedirect('/redirect_google_analytics/')
+    
     if request.method == 'POST':
         form = DimensionSelectForm(request.session.get('ga_account_list', 
                                                        pickle.loads(request.session['ga_controller']).GetAccountList('default').entry), 
@@ -208,8 +211,6 @@ def api_call(request):
             
         
     else:
-        if 'ga_controller' not in request.session:
-            return HttpResponseRedirect('/redirect_google_analytics/')
         
         feed = pickle.loads(request.session['ga_controller']).GetAccountList('default')
         request.session['ga_account_list'] = feed.entry
@@ -226,6 +227,9 @@ def api_call(request):
                                
                                
 def download_file(request):
+    
+    if 'ga_controller' not in request.session or not pickle.loads(request.session['ga_controller']).token_upgraded:
+        return HttpResponseRedirect('/redirect_google_analytics/')
     
     g = pickle.loads(request.session['ga_controller'])
     parameters = request.session['ga_parameters']
@@ -280,6 +284,9 @@ def download_code(request):
     """
     Download a working copy of the code from a template
     """
+    if 'ga_parameters' not in request.session:
+        return HttpResponseRedirect('/api_call/')
+    
     parameters = request.session['ga_parameters']
     
     filters = dict([(parameters.get("filter"), parameters.get("filter_value")),
