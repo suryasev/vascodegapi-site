@@ -48,7 +48,7 @@
 
 //Return of the calendar widget
 	$(document).ready(function(){
-		// $.dpText['TEXT_CHOOSE_DATE'] = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+		$.dpText['TEXT_CHOOSE_DATE'] = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 		
 		Date.format = 'mm/dd/yyyy';
 		$('#id_start_date').val(new Date().addDays(-31).asString());

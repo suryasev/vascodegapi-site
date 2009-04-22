@@ -25,11 +25,20 @@ p {
     margin-bottom: 0.9em;
 }
 a {
-    color: #916E49;
+    color: #4E3B26;
+    text-decoration: underline;
 }
 a:hover {
     color: white;
-    background-color: #916E49;
+    background-color: #4E3B26;
+}
+#menu a:hover {
+    color: white;
+    background-color: transparent;
+}
+#logo a:hover {
+    color: white;
+    background-color: transparent;
 }
 ul.errorlist li {
     font-size: 120%;
@@ -67,10 +76,11 @@ ul.errorlist li {
     left: 10px;
     width: 288px;
     height: 70px;
-    background-image: url(../images/vascodegapi_logo.png);
+    background-color: #fff;
+/*    background-image: url(../images/vascodegapi_logo.png);
     background-repeat: no-repeat;
     background-position: left;
-    border: 0px solid #ccc;
+*/    border: 0px solid #ccc;
 }
 #header-inner #menu {
     position: absolute;
@@ -267,7 +277,13 @@ em {
 	text-align: left;
 }
 
+form {
+    min-width: 600px;
+    width: 600px;
+}
 form p {
     color: #111 !important;
     display: block;
+    min-width: 600px;
+    width: 600px;
 }

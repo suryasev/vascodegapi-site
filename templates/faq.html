@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block content %}
-<div style="padding: 0px">
+{% block content %}{% endblock %}
+{% block contentwideright %}
+<div style="padding: 0px; float: right;">
 	<h2 id="frequently_asked_questions">
 		Frequently Asked Questions
 	</h2>
@@ -16,7 +17,7 @@
 				Do I need Google Analytics to use Vasco de Gapi?
 			</h4>
 			<p>
-				Yes!  Get it at the <a href="http://www.google.com/analytics/">Google Analytics site<a>.
+				Yes!  Get it at the <a href="http://www.google.com/analytics/">Google Analytics site</a>.
 			</p>
 			<h4>
 				I am not getting back any data.  What is wrong?
@@ -61,5 +62,6 @@
 		</div>
 	</div><br>
 </div>
+<div style="clear: both; height: 1px;"></div>
 
 {% endblock %}
