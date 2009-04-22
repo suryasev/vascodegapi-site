@@ -36,6 +36,10 @@ a:hover {
     color: white;
     background-color: transparent;
 }
+#logo a:hover {
+    color: white;
+    background-color: transparent;
+}
 ul.errorlist li {
     font-size: 120%;
     background-color: white;
