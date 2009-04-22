@@ -32,7 +32,7 @@ a:hover {
     background-color: #916E49;
 }
 #menu a:hover {
-    color: #916E49;
+    color: white;
     background-color: transparent;
 }
 ul.errorlist li {
