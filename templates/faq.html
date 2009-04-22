@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="padding: 0px">
+	<h2 id="frequently_asked_questions">
+		Frequently Asked Questions
+	</h2>
+	<div class="faq">
+		<div class="faq-body">
+			<h4>
+				What is Vasco de Gapi?  What does it explore?
+			</h4>
+			<p>
+				Vaso de Gapi explores the newly released Google Analytics API.  You can emulate any type of data pull available through the API.  Vasco de Gapi handles it for you.  For every Google Analytics API pull, you can also download the code used to make that specific API call, to ease automation of API data pulls.
+			</p>
+			<h4>
+				Do I need Google Analytics to use Vasco de Gapi?
+			</h4>
+			<p>
+				Yes!  Get it at the <a href="http://www.google.com/analytics/">Google Analytics site<a>.
+			</p>
+			<h4>
+				I am not getting back any data.  What is wrong?
+			</h4>
+			<p>
+				I likely means that the selected data slice has a limited amount of data available.  You may have selected a very restrictive filter, or picked the wrong site in Google Analytics.  The date ranges could be from a time before the site was set up.  The best thing to do could be to attempt to replicate the profile/filter/selection in the actual Google Analytics website.
+			</p>
+			<h4>
+				How many observations can Vasco de Gapi pull from the API?
+			</h4>
+			<p>
+				Currently, Vasco de Gapi is limited to pulling 10,000 observations.  If you need to pull more data, you can convince your code monkeys to download the automatically generated code, and scale up the limitations.  You may also leave a comment {{here}}, and if this is a highly-desired feature, we may consider increasing the limit.
+			</p>
+			<h4>
+				Can I sort by more than one dimension or metric?
+			</h4>
+			<p>
+				Not yet.  Leave a comment {{here}}, and we just might add in that feature.
+			</p>
+		</div>
+	</div><br>
+	<hr>
+	<div class="faq">
+		<div class="faq-title">
+			<h2 id="query_patterns">
+				Google Analytics API Questions
+			</h2>
+		</div>
+		<div class="faq-body">
+			<h4 id="does_concentrate_just_look_for_predefined_patterns_or_discover_them_from_the_data_itself">
+				I cannot figure out which dimensions and metrics I can mash together.  Where can I find out more?
+			</h4>
+			<p>
+				<a>This page</a> in the Google Analytics documentation has what you need.
+			</p>
+			<h4 id="are_the_patterns_completely_automatically_generated_or_is_there_a_human_component_that_goes_through_selects_only_the_best_templates">
+				Are the patterns completely automatically generated, or is there a human component that goes through selects only the best templates?
+			</h4>
+			<p>
+				The patterns are completely automatically generated.
+			</p>
+			<h4 id="how_are_queries_assigned_to_patterns">
+				How are queries assigned to patterns?
+			</h4>
+			<p>
+				Queries are currently assigned to the most specific pattern that they match. Some patterns are very general (like “jobs [x]”), while others are quite specific (like “things to do in [x]”).
+			</p>
+			<h4 id="what_does_the_8220x8221_mean_in_patterns">
+				What does the “[x]” mean in patterns?
+			</h4>
+			<p>
+				The “[x]” is a wildcard that can stand for one or more words. These “masked terms” are often variants of a similar concepts, like locations or celebrity names. Over time, Concentrate’s learning algorithms will replace many of these wildcards with named entity labels. For example: “hotels in [x]” might become “hotels in [City]”. During the beta, we plan to roll out updates to the algorithm which will automatically categorize these wildcards.
+			</p>
+			<h4 id="what_is_the_difference_between_x_and_xx_in_a_pattern">
+				What is the difference between [x] and [x][x] in a pattern?
+			</h4>
+			<p>
+				A single “[x]” can stand for one or more words, while “[x] [x]” implies that a query contains at least 2 masked terms.
+			</p>
+			<p>
+				For example: “hotel in [x] [x]” might match queries like “hotel in Malibu CA”, while “hotel in [x]” might match queries like “hotel in France”. Having the two masked terms allows better segmentation of user intent during the beta period. Later in the beta, these masked terms will allow our algorithms to label concepts within groups of queries.
+			</p>
+			<h4 id="what_do_you_mean_by_8220navigational8221_queries">
+				What do you mean by “Navigational” queries?
+			</h4>
+			<p>
+				Queries containing a url-like pattern are considered “Navigational” queries. These queries represent customers using the search engine to navigate to a site. For instance if a customer enters “expedia.com” into Google to get to Expedia, they are just trying to find the site, not searching for specific travel-related needs. Navigational queries can represent between 10 and 30% of typical traffic to a site.
+			</p>
+			<h4 id="what_does_city_or_state_mean_in_my_pattern_results">
+				What does [City] or [State] mean in my pattern results?
+			</h4>
+			<p>
+				Concentrate uses lists of cities, states and other sets of similar items to identify when a common, general concept appears in queries. For instance, queries like “travel to new york”, “travel to california” and “travel to VT” all represent a common pattern of “travel to [State]”. Over time, you can expect more lists to become available in Concentate.
+			</p>
+			<h4 id="why_are_some_queries_8220uncategorized8221">
+				Why are some queries “Uncategorized”?
+			</h4>
+			<p>
+				There will always be some queries that Concentrate can’t fit in a pattern. The percentage of total queries that are Uncategorized is affected by the following factors:
+			</p>
+			<ul style="margin-left: 40px; margin-top: 10px">
+				<li>Many of the uncategorized queries are single term queries or rare phrases that occur infrequently. Many very broad queries will not fit a phrase pattern ( for example, single terms like “flight” or “hotel”).
+				</li>
+				<li>Concentrate finds better patterns if it has more queries to work with. If you load a list containing just a few hundred queries, fewer patterns will be found.
+				</li>
+				<li>Concentrate finds more patterns with targeted sites. A site focused on a single industry or kind of user need, like expedia.com will have fewer uncategorized queries than a broad site like nytimes.com.
+				</li>
+				<li>Many brand related terms not currently recognized by Concentrate. As we add more named entity lists, these patterns will be found and uncategorized queries will decline.
+				</li>
+			</ul>
+		</div>
+	</div><br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+Result Summary | Google Analytics API Explorer
+{% endblock %}
+
+{% block extrahead %}
+<link href="/site_media/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block content %}
+
+<h3>Parameter Summary</h3>
+<table id="hor-minimalist-a" summary="Employee Pay Sheet">
+    <thead>
+    	<tr>
+		<th scope="col">Parameter</th>
+		<th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+		{% for par in parameters %}
+		<tr>
+			<td>{{par.0}}</td>
+			<td>{{par.1}}</td>
+		<tr>
+		{% endfor %}
+    </tbody>
+</table>
+
+<h3>Google Analytics Summary</h3>
+<table id="hor-minimalist-a" summary="Employee Pay Sheet">
+    <thead>
+    	<tr>
+		{% for val in parameter_names %}<th scope="col">{{ val }}</th>{% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+		{% for entry in entry_values %}
+		<tr>
+			{% for val in entry %}<td>{{ val }}</td>{% endfor %}
+		<tr>
+		{% endfor %}
+    </tbody>
+</table>
+
+<div>If you only want the results, <a href="/download_file/">download all the results.</a></div>
+<div><a href="/download_code/">Download a working example of the code</a></div>
+
+{% endblock %}
+
+{% comment %}
+{% block contentright %}
+<h3>What is vasco de gapi</h3>
+<p>Use this service to explore the newly-released Google Analytics API (GAPI).  Vasco can download any slice of Google Analytics data, and it can automatically generate Python code for future repeated GAPI data pulls.</p>
+<p>A Google Analytics account is necessary.</p>
+<p>This site runs on a custom Python wrapper for the API.  Download it here.</p>
+{% endblock %}
+{% endcomment %}

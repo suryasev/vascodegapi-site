@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<script type="text/javascript" src="/site_media/js/date.js"></script>
+<script type="text/javascript" charset="utf-8" src="/site_media/js/jquery.datePicker.js"></script>
+<link rel="stylesheet" href="/site_media/css/datePicker.css" type="text/css" media="screen"> 
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module" id="loadform">
+
+    
+<form action="{{ next }}" method="POST" enctype="multipart/form-data">
+{{ form.as_p }}
+<p><a id="show-more-filters" href="">Show more filters</a></p>
+<p><input type="submit" value="Load my Stuff" /></p>
+</form>
+
+
+    </div>
+</div>
+
+<style type="text/css" media="screen">
+    form p {
+        position: relative; 
+        margin-left: 100px;
+        color: #999;
+        width: 50%;
+        font-size: 0.8em;
+    }
+    form p label {
+        position: absolute; 
+        margin-left: -100px;
+        color: #333;
+        font-size: 1.2em;
+    }
+/*    form p textarea {
+        display: block;
+    }
+    form p input {
+        display: block;
+    }*/
+
+</style> 
+
+<script type="text/javascript" charset="utf-8">
+
+//Return of the calendar widget
+	$(document).ready(function(){
+		// $.dpText['TEXT_CHOOSE_DATE'] = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+		
+		Date.format = 'mm/dd/yyyy';
+		$('#id_start_date').val(new Date().addDays(-31).asString());
+		$('#id_start_date').datePicker({startDate:'01/01/2007', endDate:new Date().addDays(-1).asString()});
+
+		$('#id_end_date').val(new Date().addDays(-1).asString());
+		$('#id_end_date').datePicker({startDate:new Date().addDays(-31).asString(), endDate:new Date().asString()});
+
+		$('#id_start_date').bind('dateSelected', function(e, selectedDate, $td, status) {
+				$('#id-end-date').dpSetStartDate(selectedDate.asString());
+		});
+		$('#id_end_date').bind('dateSelected', function(e, selectedDate, $td, status) {
+				$('#id-start-date').dpSetEndDate(selectedDate.asString());
+		});
+		
+		$('#id_filter_2').parent().slideUp();
+		$('#id_filter_2_value').parent().slideUp();
+		$('#id_filter_3').parent().slideUp();
+		$('#id_filter_3_value').parent().slideUp();
+		
+		$('#show-more-filters').bind('click', function() {
+			$('#id_filter_2').parent().slideDown();
+			$('#id_filter_2_value').parent().slideDown();
+			$('#id_filter_3').parent().slideDown();
+			$('#id_filter_3_value').parent().slideDown();
+			
+			return false;
+		});
+
+	});
+</script>
+{% endblock %}

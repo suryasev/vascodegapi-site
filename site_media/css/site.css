@@ -1,0 +1,254 @@
+body {
+    font-family: "DistrictThin";
+    font-family: "Myriad Pro";
+    font-family: "Helvetica Neue";
+    font-family: Fertigo, Georgia, "Helvetica", Arial;
+    font-weight: light;
+    background-color: #336699;
+    line-height: 1.25;
+}
+h1,h2,h3 {
+    font-family: "Zapfino", "Georgia", serif;    
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    margin-top: 1.0em;
+}
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.7em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.0em; }
+p {
+    font-size: 0.9em;
+    margin-bottom: 0.9em;
+}
+
+
+#header {
+    background-color: #eef;
+    height: 110px;
+    border-bottom: 1px solid #aaa;
+}
+#header-shadow {
+    height: 20px; 
+    width: 960px; 
+    margin: 0;
+    margin: 0 auto;    
+    background-color: transparent;
+}
+#header-inner {
+    width: 940px;
+    padding: 10px;
+    height: 70px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 1px solid #666;
+}
+#header-inner #logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 288px;
+    height: 70px;
+    background-image: url(../images/vascodegapi_logo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    border: 0px solid #ccc;
+}
+#header-inner #menu {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    height: 90px;
+    background-color: transparent;
+}
+#menu ul li {
+    display: block;
+    float: right;
+    padding: 30px 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    background-image: url(../images/arrow.png);   
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 30px;
+}
+#menu ul li a {
+    text-decoration: none;
+    color: #000;
+}
+#menu ul li.selected {
+    background-color: #BA8C5D;
+    color: white;
+}
+#menu ul li.login {
+    margin-right: 50px;
+}
+
+#menu ul li span {
+    display: block;
+    font-size: 80%;
+}
+#content-top {
+    background-color: transparent;
+    height: 100%;
+}
+#content-top-inner {
+    width: 940px;
+    height: 100%;
+    background-color: #fffdef;
+    background-image: url(../images/vascodegapi_background.png);
+    background-repeat:repeat-x;
+    background-position:top; 
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+#content-top-left {
+    float: left;
+    width: 460px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+#content-top-right {
+    float: right;
+    width: 460px;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+}
+#signup {
+    width: 300px;
+    margin: 50px auto;
+/*    background-color: #fff;*/
+}
+#signup-button {
+    width: 280px;
+    padding: 10px;
+    background-color: #70b75e;
+}
+#signup-details {
+    padding: 10px; 
+    font-size: 90%; 
+    color: #555555;    
+}
+#signup-requirements {
+    background-color: #fff;
+    padding: 10px; 
+    font-size: 75%; 
+    color: #666;    
+}
+span.new {
+    background-color: #DB6300;
+    color: white;
+    text-transform: uppercase;
+    font-size: 80%;
+    padding: 2px 3px;
+}
+
+#content-bottom {
+    font-size: 90%;
+    background-color: transparent;
+    height: 400px;
+    margin: 0px;
+    padding: 0;
+}
+#content-bottom-inner {
+    margin: 0;
+    padding: 0;
+    width: 940px;
+    padding: 10px;
+    padding-top: 40px;
+    height: 100%;
+    background-color: #aaa;
+    margin: 0 auto;
+}
+
+#footer {
+    background-color: transparent;
+    height: 50px;
+}
+#footer-inner {
+    width: 940px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: right;
+    margin: 0 auto;
+    font-size: 80%;
+}
+#footer-inner a {
+    color: white;
+}
+#footer-shadow {
+    height: 20px; 
+    width: 960px; 
+    margin: 0;
+    margin: 0 auto;    
+    background-color: transparent;
+}
+
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+
+
+.features-panel {
+    float: left;
+	position: relative;
+	width: 300px;
+}
+.features-panel div {
+    max-width: 380px;
+    display: inline;
+}
+.features-panel:hover {
+}
+.features-panel h2 {
+	font-family: Georgia, sans;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: black;
+	font-size: 16px;
+	line-height: 1.0;
+}
+.features-panel h3 {
+	font-family: "Helvetica Neue", Helvetica, Georgia, sans;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: black;
+	font-size: 12px;
+}
+.features-panel ul {
+	font-family: "Helvetica Neue", Helvetica, Georgia, sans;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 10px 0;
+	padding: 0;
+	list-style-type: none;
+	color: #333;
+	line-height: 1.1;
+}
+.features-panel ul li > strong {
+	font-family: "Helvetica Neue", Helvetica, Georgia, sans;
+	font-size: 16px;
+	font-weight: bold;
+	color: #00501b;
+}
+.features-panel ul li {
+	margin: 15px 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: left;
+}

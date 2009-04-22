@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>{% block title %}Explore the Google Analytics API: Vasco de Gapi, from Juice Analytics{% endblock %}</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="CGemignani">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>    
+	<script type="text/javascript" src="/site_media/js/jquery.color.js"></script>    
+	<script type="text/javascript" src="/site_media/js/site.js"></script>    
+
+<style type="text/css"> 
+    @import url("/site_media/css/reset.css");
+    @import url("/site_media/css/site.css");
+</style>
+{% block extrahead %}{% endblock %}	
+
+</head>
+<body>
+    <div id="header">
+        <div id="header-shadow">
+            <img id="top" src="site_media/images/top.png" href="/home/" sm:iepng="true" alt="" width="950" style="margin-top: 10px"/>
+        </div>
+        <div id="header-inner">
+            <div id="menu">
+                <ul>
+                    <li><div><a href="/faq/">FAQ</a></div></li>
+                    <li><div><a href="http://code.google.com/apis/analytics/docs/gdata/gdataDeveloperGuide.html">Read Google's API Docs</a></div></li>
+                    <li><div>Read our <br/>post</div></li>
+                    <li class="selected"><div><a href="/api_call/">Use Vasco de Gapi</a>
+                        <span>Explore!</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="logo"></div>
+        </div>
+    </div>
+
+    <div id="content-top">
+        <div id="content-top-inner">
+            <div id="content-top-left">
+			{% block content %}
+                <h2>What is Concentrate?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			{% endblock %}
+            </div>
+            <div id="content-top-right">
+                <div id="signup">
+                    <!-- <div id="signup-requirements"> -->
+						{% block contentright %}
+						{% endblock %}
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div style="clear: both; height: 1px">
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <div id="footer-inner">
+			{% block footer %}
+            <a href="http://www.juiceanalytics.com">Juice Analytics</a> | <a href="http://www.google.com/analytics/">Google Analytics</a>
+			{% endblock %}
+        </div>
+        <div id="footer-shadow">
+            <img id="bottom" src="site_media/images/bottom.png" sm:iepng="true" alt="" width="950" />
+        </div>
+    </div>
+    <br/>
+    
+</body>
+</html>

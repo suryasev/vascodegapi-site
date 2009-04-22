@@ -1,0 +1,528 @@
+- fields:
+    compatability: [2, 4, 5, 6, 8, 9, 10, 11]
+    name: visitor
+    subdivision: dimension
+  model: dimension.category
+  pk: 1
+- fields:
+    compatability: [1, 6]
+    name: campaign
+    subdivision: dimension
+  model: dimension.category
+  pk: 2
+- fields:
+    compatability: [9, 11]
+    name: content
+    subdivision: dimension
+  model: dimension.category
+  pk: 3
+- fields:
+    compatability: [1]
+    name: ecommerce
+    subdivision: dimension
+  model: dimension.category
+  pk: 4
+- fields:
+    compatability: [1, 6, 9, 11]
+    name: internal search
+    subdivision: dimension
+  model: dimension.category
+  pk: 5
+- fields:
+    compatability: [1, 2, 5]
+    name: visitor
+    subdivision: metric
+  model: dimension.category
+  pk: 6
+- fields:
+    compatability: []
+    name: campaign
+    subdivision: metric
+  model: dimension.category
+  pk: 7
+- fields:
+    compatability: [1]
+    name: content
+    subdivision: metric
+  model: dimension.category
+  pk: 8
+- fields:
+    compatability: [1, 3, 5]
+    name: ecommerce
+    subdivision: metric
+  model: dimension.category
+  pk: 9
+- fields:
+    compatability: [1]
+    name: internal search
+    subdivision: metric
+  model: dimension.category
+  pk: 10
+- fields:
+    compatability: [1, 3, 5]
+    name: goals
+    subdivision: metric
+  model: dimension.category
+  pk: 11
+- fields: {category: 1, description: 'The names of browsers used by visitors to your
+      website. For example, "Internet Explorer" or "Firefox." The version of the browser
+      is not returned in this field. ', name: 'ga:browser'}
+  model: dimension.fieldtype
+  pk: 1
+- fields: {category: 1, description: 'The browser versions used by visitors to your
+      site. For example, 2.0.0.14 ', name: 'ga:browserVersion'}
+  model: dimension.fieldtype
+  pk: 2
+- fields: {category: 1, description: 'The cities of site visitors, derived from IP
+      addresses. The city field falls in a hierarchy of geographical groupings used
+      in Analytics, which proceeds in the following order: continent, sub-continent,
+      country, region, sub-region, and city. ', name: 'ga:city'}
+  model: dimension.fieldtype
+  pk: 3
+- fields: {category: 1, description: 'The qualitative network connection speeds of
+      site visitors. For example, T1, DSL, Cable, Dialup. ', name: 'ga:connectionSpeed'}
+  model: dimension.fieldtype
+  pk: 4
+- fields: {category: 1, description: 'The continents of site visitors, derived from
+      IP addresses. ', name: 'ga:continent'}
+  model: dimension.fieldtype
+  pk: 5
+- fields: {category: 1, description: 'Number of visits to your site. This is calculated
+      by determining the number of visitor sessions. For example, if a visitor comes
+      to your site, exits their browser, and 5 minutes later visits your site again
+      via the same browser, that is calculated as 2 visits. ', name: 'ga:countOfVisits'}
+  model: dimension.fieldtype
+  pk: 6
+- fields: {category: 1, description: 'The countries of site visitors, derived from
+      IP addresses. ', name: 'ga:country'}
+  model: dimension.fieldtype
+  pk: 7
+- fields: {category: 1, description: 'The date of the visit. An integer in the form
+      YYYYMMDD. ', name: 'ga:date'}
+  model: dimension.fieldtype
+  pk: 8
+- fields: {category: 1, description: 'The day of the month from 01 to 31. ', name: 'ga:day'}
+  model: dimension.fieldtype
+  pk: 9
+- fields: {category: 1, description: 'The number of days elapsed since visitors last
+      visited the site. Used to calculate visitor loyalty. For example, if you view
+      this field in a report on 5/20, and some visitors last visited your site on
+      5/15, the value for this would be 5, reported as "5 days ago." ', name: 'ga:daysSinceLastVisit'}
+  model: dimension.fieldtype
+  pk: 10
+- fields: {category: 1, description: 'The versions of Flash supported by visitors''
+      browsers, including minor versions. ', name: 'ga:flashVersion'}
+  model: dimension.fieldtype
+  pk: 11
+- fields: {category: 1, description: 'The hostnames visitors used to reach your site.
+      In other words, if some visitors use www.googlestore.com to reach your site,
+      this string appears as one of the hostnames used to reach your site. However,
+      if other visitors also come to your site via googlestore.com or via an IP redirect
+      from a search engine result (66.102.9.104), those values will also be present
+      in this field. ', name: 'ga:hostname'}
+  model: dimension.fieldtype
+  pk: 12
+- fields: {category: 1, description: 'A two digit hour of the day ranging from 00-23.
+      (Google Analytics does not track visitor time more precisely than hours.) Note:
+      Combining this dimension with ga:adContent is not currently supported. ', name: 'ga:hour'}
+  model: dimension.fieldtype
+  pk: 13
+- fields: {category: 1, description: 'Whether the visitor has Java support enabled
+      on their browser. The possible values are Yes or No. ', name: 'ga:javaEnabled'}
+  model: dimension.fieldtype
+  pk: 14
+- fields: {category: 1, description: 'This field uses the language as provided by
+      the HTTP Request for the browser to determine the primary languages used by
+      visitors. Values are given as an ISO-639 code (e.g. en-gb for British English). ',
+    name: 'ga:language'}
+  model: dimension.fieldtype
+  pk: 15
+- fields: {category: 1, description: 'The approximate latitude of the visitor''s city.
+      Locations north of the equator are represented by positive values and locations
+      south of the equator by negative values. ', name: 'ga:latitude'}
+  model: dimension.fieldtype
+  pk: 16
+- fields: {category: 1, description: 'The approximate longitude of the visitor''s
+      city. Locations east of the meridian are represented by positive values and
+      locations west of the meridian by negative values. ', name: 'ga:longitude'}
+  model: dimension.fieldtype
+  pk: 17
+- fields: {category: 1, description: 'The month of the visit. A two digit integer
+      from 01 to 12. ', name: 'ga:month'}
+  model: dimension.fieldtype
+  pk: 18
+- fields: {category: 1, description: 'The domain name of the ISPs used by visitors
+      to your website. ', name: 'ga:networkDomain'}
+  model: dimension.fieldtype
+  pk: 19
+- fields: {category: 1, description: 'The name of service providers used to reach
+      your site. For example, if most visitors to your site come via the major service
+      providers for cable internet, you will see the names of those cable service
+      providers in this element. ', name: 'ga:networkLocation'}
+  model: dimension.fieldtype
+  pk: 20
+- fields: {category: 1, description: 'The number of pages visited by visitors during
+      a session (visit). The value is a histogram that counts pageviews across a range
+      of possible values. In this calculation, all visits will have at least one pageview,
+      and some percentage of visits will have more. ', name: 'ga:pageDepth'}
+  model: dimension.fieldtype
+  pk: 21
+- fields: {category: 1, description: 'The operating system used by your visitors.
+      For example, Windows, Linux, Macintosh, iPhone, iPod. ', name: 'ga:operatingSystem'}
+  model: dimension.fieldtype
+  pk: 22
+- fields: {category: 1, description: 'The version of the operating system used by
+      your visitors, such as XP for Windows or PPC for Macintosh. ', name: 'ga:operatingSystemVersion'}
+  model: dimension.fieldtype
+  pk: 23
+- fields: {category: 1, description: 'The region of site visitors, derived from IP
+      addresses. In the U.S., a region is a state, such as New York. ', name: 'ga:region'}
+  model: dimension.fieldtype
+  pk: 24
+- fields: {category: 1, description: 'The color depth of visitors'' monitors, as retrieved
+      from the DOM of the visitor''s browser. Values include 4-bit, 8-bit, 24-bit,
+      or undefined-bit. ', name: 'ga:screenColors'}
+  model: dimension.fieldtype
+  pk: 25
+- fields: {category: 1, description: 'The screen resolution of visitors'' monitors,
+      as retrieved from the DOM of the visitor''s browser. For example: 1024x738. ',
+    name: 'ga:screenResolution'}
+  model: dimension.fieldtype
+  pk: 26
+- fields: {category: 1, description: 'The sub-continent of site visitors, derived
+      from IP addresses. For example, Polynesia or Northern Europe. ', name: 'ga:subContinent'}
+  model: dimension.fieldtype
+  pk: 27
+- fields: {category: 1, description: 'The value provided when you define custom visitor
+      segments for your site. For more information, see Creating Custom Visitor Segments. ',
+    name: 'ga:userDefinedValue'}
+  model: dimension.fieldtype
+  pk: 28
+- fields: {category: 1, description: 'A boolean indicating if visitors are new or
+      returning. Possible values: New Visitor, Returning Visitor. ', name: 'ga:visitorType'}
+  model: dimension.fieldtype
+  pk: 29
+- fields: {category: 1, description: 'The week of the visit. A two-digit number from
+      01 to 52. ', name: 'ga:week'}
+  model: dimension.fieldtype
+  pk: 30
+- fields: {category: 1, description: 'The year of the visit. A four-digit year from
+      2005 to the current year. ', name: 'ga:year'}
+  model: dimension.fieldtype
+  pk: 31
+- fields: {category: 2, description: 'The first line of the text for your online Ad
+      campaign. If you are using mad libs for your AdWords content, this field displays
+      the keywords you provided for the mad libs keyword match. Note: Combining this
+      dimension with ga:hour is not currently supported. ', name: 'ga:adContent'}
+  model: dimension.fieldtype
+  pk: 32
+- fields: {category: 2, description: 'The ad groups that you have identified for your
+      campaign keywords. For example, you might have an ad group toys which you associate
+      with the keywords fuzzy bear. ', name: 'ga:adGroup'}
+  model: dimension.fieldtype
+  pk: 33
+- fields: {category: 2, description: 'The position of the advertisement as it appears
+      on the host page. For example, the online advertising position might be side
+      or top. ', name: 'ga:adSlot'}
+  model: dimension.fieldtype
+  pk: 34
+- fields: {category: 2, description: 'The order of the online advertisement as it
+      appears along with other ads in the position on the page. For example, the ad
+      might appear on the right side of the page and be the 3rd ad from the top. ',
+    name: 'ga:adSlotPosition'}
+  model: dimension.fieldtype
+  pk: 35
+- fields: {category: 2, description: 'The name(s) of the online ad campaign that you
+      use for your website. ', name: 'ga:campaign'}
+  model: dimension.fieldtype
+  pk: 36
+- fields: {category: 2, description: 'The keywords used by visitors to reach your
+      site, via both paid ads and through search engine results. ', name: 'ga:keyword'}
+  model: dimension.fieldtype
+  pk: 37
+- fields: {category: 2, description: 'The type of referral to your website. For example,
+      when referring sources to your website are search engines, there are a number
+      of possible mediums that can be used from a search engine referral: from a search
+      result (organic) and from an online ad on the search results page (CPC, ppc,
+      cpa, CPM, cpv, cpp). ', name: 'ga:medium'}
+  model: dimension.fieldtype
+  pk: 38
+- fields: {category: 2, description: 'The path of the referring URL. If someone places
+      a link to your site on their website, this element contains the path of the
+      page that contains the referring link. ', name: 'ga:referralPath'}
+  model: dimension.fieldtype
+  pk: 39
+- fields: {category: 2, description: 'The domain (e.g. google.com) of the source referring
+      the visitor to your website. The value for this dimension sometimes contains
+      a port address as well. ', name: 'ga:source'}
+  model: dimension.fieldtype
+  pk: 40
+- fields: {category: 3, description: 'The last page of the session (or "exit" page)
+      for your visitors. ', name: 'ga:exitPagePath'}
+  model: dimension.fieldtype
+  pk: 41
+- fields: {category: 3, description: 'The path component of the URL of the entrance
+      or "landing" page for your visitors. ', name: 'ga:landingPagePath'}
+  model: dimension.fieldtype
+  pk: 42
+- fields: {category: 3, description: 'The page on your website by path and/or query
+      parameters. ', name: 'ga:pagePath'}
+  model: dimension.fieldtype
+  pk: 43
+- fields: {category: 3, description: 'The title for the page, as specified in the
+      <title></title> element of the HTML document. ', name: 'ga:pageTitle'}
+  model: dimension.fieldtype
+  pk: 44
+- fields: {category: 4, description: 'Typically used to designate a supplying company
+      or brick and mortar location; product affiliation. ', name: 'ga:affiliation'}
+  model: dimension.fieldtype
+  pk: 45
+- fields: {category: 4, description: 'The number of days between users'' purchases
+      and the related campaigns that lead to the purchases. ', name: 'ga:daysToTransaction'}
+  model: dimension.fieldtype
+  pk: 46
+- fields: {category: 4, description: 'Any product variations (size, color) for purchased
+      items as supplied by your ecommerce application. ', name: 'ga:productCategory'}
+  model: dimension.fieldtype
+  pk: 47
+- fields: {category: 4, description: 'The product name for purchased items as supplied
+      by your ecommerce tracking method. ', name: 'ga:productName'}
+  model: dimension.fieldtype
+  pk: 48
+- fields: {category: 4, description: 'The product codes for purchased items as you
+      have defined them in your ecommerce tracking application. ', name: 'ga:productSku'}
+  model: dimension.fieldtype
+  pk: 49
+- fields: {category: 4, description: 'The transaction ID for the shopping cart purchase
+      as supplied by your ecommerce tracking method. ', name: 'ga:transactionId'}
+  model: dimension.fieldtype
+  pk: 50
+- fields: {category: 5, description: 'If you have categories enabled for internal
+      site search, this field identifies the categories used for the internal search.
+      For example, you might have product categories for internal search, such as
+      electronics, furniture, or clothing. ', name: 'ga:searchCategory'}
+  model: dimension.fieldtype
+  pk: 51
+- fields: {category: 5, description: 'The page that the user visited after performing
+      an internal site search. ', name: 'ga:searchDestinationPage'}
+  model: dimension.fieldtype
+  pk: 52
+- fields: {category: 5, description: 'Search terms used by site visitors on your internal
+      site search. ', name: 'ga:searchKeyword'}
+  model: dimension.fieldtype
+  pk: 53
+- fields: {category: 5, description: 'Subsequent keyword search terms or strings entered
+      by users after a given initial string search. ', name: 'ga:searchKeywordRefinement'}
+  model: dimension.fieldtype
+  pk: 54
+- fields: {category: 5, description: 'The page where the user initiated an internal
+      site search. ', name: 'ga:searchStartPage'}
+  model: dimension.fieldtype
+  pk: 55
+- fields: {category: 5, description: 'A boolean which separates visitor activity depending
+      upon whether internal search activity occured or did not occur. Values are Visits
+      With Site Search and Visits Without Site Search. ', name: 'ga:searchUsed'}
+  model: dimension.fieldtype
+  pk: 56
+- fields: {category: 6, description: 'The total number of single-page visits to your
+      site. ', name: 'ga:bounces'}
+  model: dimension.fieldtype
+  pk: 57
+- fields: {category: 6, description: 'The number of entrances to your site. The value
+      will always be equal to the number of visits when aggregated over your entire
+      website. Thus, this metric is most useful when combined with dimensions such
+      as ga:landingPagePath, at which point entrances as a metric indicates the number
+      of times a particular page served as an entrance to your site. ', name: 'ga:entrances'}
+  model: dimension.fieldtype
+  pk: 58
+- fields: {category: 6, description: 'The number of exits from your site. As with
+      entrances, it will always be equal to the number of visits when aggregated over
+      your entire website. Use this metric in combination with content dimensions
+      such as ga:exitPagePath in order to determine the number of times a particular
+      page was the last one viewed by visitors. ', name: 'ga:exits'}
+  model: dimension.fieldtype
+  pk: 59
+- fields: {category: 6, description: 'The number of visitors whose visit to your site
+      was marked as a first-time visit. ', name: 'ga:newVisits'}
+  model: dimension.fieldtype
+  pk: 60
+- fields: {category: 6, description: 'The total number of pageviews for your site
+      when aggregated over the selected dimension. For example, if you select this
+      metric together with ga:pagePath, it will return the number of page views for
+      each URI. ', name: 'ga:pageviews'}
+  model: dimension.fieldtype
+  pk: 61
+- fields: {category: 6, description: 'How long a visitor spent on a particular page
+      or set of pages. Calculated by subtracting the initial view time for a particular
+      page from the initial view time for a subsequent page. Thus, this metric does
+      not apply to exit pages for your site. ', name: 'ga:timeOnPage'}
+  model: dimension.fieldtype
+  pk: 62
+- fields: {category: 6, description: 'The total duration of visitor sessions over
+      the selected dimension. For example, suppose you combine this field with a particular
+      ad campaign. In this case, the metric will display the total duration of all
+      visitor sessions for those visitors who came to your site via a particular ad
+      campaign. You could then compare this metric to the duration of all visitors
+      who came to your site through means other than the particular ad campaign. This
+      would then give you a side-by-side comparison and a means to calculate the boost
+      in visit duration provided by a particular campaign. ', name: 'ga:timeOnSite'}
+  model: dimension.fieldtype
+  pk: 63
+- fields: {category: 6, description: 'Total number of visitors to your site for the
+      requested time period. When requesting this metric, you can only combine it
+      with time dimensions such as ga:hour or ga:year. ', name: 'ga:visitors'}
+  model: dimension.fieldtype
+  pk: 64
+- fields: {category: 6, description: 'The total number of visits over the selected
+      dimension. A visit consists of a single-user session, which times out automatically
+      after 30 minutes unless the visitor continues activity on your site, or unless
+      you have adjusted the user session in the ga.js tracking for your site. See
+      Adjusting the User Session for more information. ', name: 'ga:visits'}
+  model: dimension.fieldtype
+  pk: 65
+- fields: {category: 7, description: 'The total number of times users have clicked
+      on an ad to reach your site. ', name: 'ga:adClicks'}
+  model: dimension.fieldtype
+  pk: 66
+- fields: {category: 7, description: 'Derived cost for the advertising campaign. The
+      currency for this value is based on the currency that you set in your AdWords
+      account. ', name: 'ga:adCost'}
+  model: dimension.fieldtype
+  pk: 67
+- fields: {category: 7, description: 'Cost to advertiser per click. ', name: 'ga:CPC'}
+  model: dimension.fieldtype
+  pk: 68
+- fields: {category: 7, description: 'Cost per thousand impressions. ', name: 'ga:CPM'}
+  model: dimension.fieldtype
+  pk: 69
+- fields: {category: 7, description: 'Click-through-rate for your ad. This is equal
+      to the number of clicks divided by the number of impressions for your ad (e.g.
+      how many times users clicked on one of your ads where that ad appeared). ',
+    name: 'ga:CTR'}
+  model: dimension.fieldtype
+  pk: 70
+- fields: {category: 7, description: 'Total number of campaign impressions. ', name: 'ga:impressions'}
+  model: dimension.fieldtype
+  pk: 71
+- fields: {category: 8, description: 'The number of different (unique) pages within
+      a visit, summed up across all visits ', name: 'ga:uniquePageviews'}
+  model: dimension.fieldtype
+  pk: 72
+- fields: {category: 9, description: 'Total revenue from purchased product items on
+      your site. See the tracking API reference for _addItem() for additional information. ',
+    name: 'ga:itemRevenue'}
+  model: dimension.fieldtype
+  pk: 73
+- fields: {category: 9, description: 'The total number of items purchased. For example,
+      if users purchase 2 frisbees and 5 tennis balls, 7 items have been purchased. ',
+    name: 'ga:itemQuantity'}
+  model: dimension.fieldtype
+  pk: 74
+- fields: {category: 9, description: 'The total sale revenue, including shipping and
+      tax, if provided in the transation. See the documentation for _addTrans() in
+      the tracking API reference for additional information. ', name: 'ga:transactionRevenue'}
+  model: dimension.fieldtype
+  pk: 75
+- fields: {category: 9, description: 'The total number of transactions. ', name: 'ga:transactions'}
+  model: dimension.fieldtype
+  pk: 76
+- fields: {category: 9, description: 'The total cost of shipping. ', name: 'ga:transactionShipping'}
+  model: dimension.fieldtype
+  pk: 77
+- fields: {category: 9, description: 'The total amount of tax. ', name: 'ga:transactionTax'}
+  model: dimension.fieldtype
+  pk: 78
+- fields: {category: 9, description: 'The number of product sets purchased. For example,
+      if users purchase 2 frisbees and 5 tennis balls from your site, 2 product sets
+      have been purchased. ', name: 'ga:uniquePurchases'}
+  model: dimension.fieldtype
+  pk: 79
+- fields: {category: 10, description: 'The average number of subsequent page views
+      made on your site after a use of your internal search feature. ', name: 'ga:searchDepth'}
+  model: dimension.fieldtype
+  pk: 80
+- fields: {category: 10, description: 'The visit duration to your site where a use
+      of your internal search feature occurred. ', name: 'ga:searchDuration'}
+  model: dimension.fieldtype
+  pk: 81
+- fields: {category: 10, description: 'The number of exits on your site that occurred
+      following a search result from your internal search feature. ', name: 'ga:searchExits'}
+  model: dimension.fieldtype
+  pk: 82
+- fields: {category: 10, description: 'The number of refinements made on an internal
+      search. ', name: 'ga:searchRefinements'}
+  model: dimension.fieldtype
+  pk: 83
+- fields: {category: 10, description: 'The number of unique visitors to your site
+      who used your internal search feature. ', name: 'ga:searchUniques'}
+  model: dimension.fieldtype
+  pk: 84
+- fields: {category: 10, description: 'The total number of visits to your site where
+      a use of your internal search feature occurred. ', name: 'ga:searchVisits'}
+  model: dimension.fieldtype
+  pk: 85
+- fields: {category: 11, description: 'The total number of completions for the specific
+      goal. You can request completions for individual goals by number (e.g. ga:goal1Completions). ',
+    name: 'ga:goal1Completions'}
+  model: dimension.fieldtype
+  pk: 86
+- fields: {category: 11, description: 'The total number of completions for the specific
+      goal. You can request completions for individual goals by number (e.g. ga:goal1Completions). ',
+    name: 'ga:goal2Completions'}
+  model: dimension.fieldtype
+  pk: 87
+- fields: {category: 11, description: 'The total number of completions for the specific
+      goal. You can request completions for individual goals by number (e.g. ga:goal1Completions). ',
+    name: 'ga:goal3Completions'}
+  model: dimension.fieldtype
+  pk: 88
+- fields: {category: 11, description: 'The total number of completions for the specific
+      goal. You can request completions for individual goals by number (e.g. ga:goal1Completions). ',
+    name: 'ga:goal4Completions'}
+  model: dimension.fieldtype
+  pk: 89
+- fields: {category: 11, description: 'The total number of completions for all goals
+      defined for your profile. ', name: 'ga:goalCompletionsAll'}
+  model: dimension.fieldtype
+  pk: 90
+- fields: {category: 11, description: 'The total number of starts for the requested
+      goal number. ', name: 'ga:goal1Starts'}
+  model: dimension.fieldtype
+  pk: 91
+- fields: {category: 11, description: 'The total number of starts for the requested
+      goal number. ', name: 'ga:goal2Starts'}
+  model: dimension.fieldtype
+  pk: 92
+- fields: {category: 11, description: 'The total number of starts for the requested
+      goal number. ', name: 'ga:goal3Starts'}
+  model: dimension.fieldtype
+  pk: 93
+- fields: {category: 11, description: 'The total number of starts for the requested
+      goal number. ', name: 'ga:goal4Starts'}
+  model: dimension.fieldtype
+  pk: 94
+- fields: {category: 11, description: 'The total number of starts for all goals defined
+      for your profile. ', name: 'ga:goalStartsAll'}
+  model: dimension.fieldtype
+  pk: 95
+- fields: {category: 11, description: 'The total numeric value for the requested goal. ',
+    name: 'ga:goal1Value'}
+  model: dimension.fieldtype
+  pk: 96
+- fields: {category: 11, description: 'The total numeric value for the requested goal. ',
+    name: 'ga:goal2Value'}
+  model: dimension.fieldtype
+  pk: 97
+- fields: {category: 11, description: 'The total numeric value for the requested goal. ',
+    name: 'ga:goal3Value'}
+  model: dimension.fieldtype
+  pk: 98
+- fields: {category: 11, description: 'The total numeric value for the requested goal. ',
+    name: 'ga:goal4Value'}
+  model: dimension.fieldtype
+  pk: 99
+- fields: {category: 11, description: The total value for all goals defined for your
+      profile., name: 'ga:goalValueAll'}
+  model: dimension.fieldtype
+  pk: 100
+
