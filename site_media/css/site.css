@@ -252,3 +252,8 @@ em {
 	list-style-type: none;
 	text-align: left;
 }
+
+form p {
+    color: #333;
+    display: block;
+}
