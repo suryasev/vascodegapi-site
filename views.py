@@ -19,6 +19,12 @@ except:
 
 from gdata_service import DjangoGoogleAnalyticsService
 
+def categories(dim_list):
+    return [d.category.name for d in dim_list if d]
+    
+def names(dim_list):
+    return [d.name for d in dim_list if d]
+
 def redirect_google_analytics(request, next='/successful_connect_google_analytics'):
     """
     send a user to google 
@@ -111,6 +117,33 @@ class DimensionSelectForm(forms.Form):
                        
         match_errors = []
         
+        # if 'content' in categories(dimensions):
+        #     for d2 in dimensions:
+        #         if not (d2.is_time_key(ex='ga:hour') or d2.category.name == 'content'):
+        #             "Puxa vida! %s is not allowed with any content dimensions"
+        #     
+        #     for m2 in metrics:
+        #         if m2.category.name == 'campaign':
+        #             
+        #             or m2.name in ['ga:visitors']):
+        
+        if 'campaign' in categories(metrics + filters.keys()) and set(['ga:adContent', 
+                                                    'ga:adSlot', 'ga:adSlotPosition']).union(set(names(dimensions))):
+            for d2 in dimensions:
+                if d2.category.name != 'campaign' and not d2.is_time_key(ex='ga:hour'):
+                    match_errors += ["Aieee! You cannot use %s together with campaign metrics and ad metrics." % d2]
+                    break
+                elif d2.category.name == 'content':
+                    match_errors += ['Oy! You cannot have %s together with campaign metrics' % d2]
+                    break
+                    
+            if 'ga:visitors' in names(metrics + filters.keys()):
+                match_errors += ["Oy!  You cannot use ga:visitors with this combination of campaign metrics and ad dimensions"]
+                
+            metrics = [m for m in metrics if m.category.name != 'campaign']
+            dimensions = [d for d in dimensions if d.name not in ['ga:adContent', 
+                                                        'ga:adSlot', 'ga:adSlotPosition']]
+            
         while dimensions:
             d1 = dimensions.pop()
             for d2 in dimensions:
