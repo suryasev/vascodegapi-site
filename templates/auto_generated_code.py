@@ -72,7 +72,7 @@ class OAuthSample(object):
             
         i = 1
         for entry in feed.entry:
-            print "%d. %s" % (i, ', '.join([{% for dim in dimension_list %}entry.{{dim}}.value,{% endfor %}] + [{% for met in metric_list %}entry.{{met}}.value,{% endfor %}]))
+            print "%d. %s" % (i, ', '.join([{% for dim in dimension_list %}str(entry.{{dim}}),{% endfor %}] + [{% for met in metric_list %}str(entry.{{met}}),{% endfor %}]))
             i += 1
             
     def _PrintAccountFeed(self, feed):
@@ -83,7 +83,7 @@ class OAuthSample(object):
             
         i = 1
         for entry in feed.entry:
-            print '%d. %s: %s, %s' % (i, entry.accountId.value, entry.profileId.value, entry.accountName.value)
+            print '%d. %s: %s, %s' % (i, entry.accountId, entry.profileId, entry.accountName)
             i += 1
 
     def _ListAllAccounts(self):
