@@ -212,7 +212,7 @@ def api_call(request):
                                 filters=','.join(['%s==%s' % (key, value) for key, value in filters.iteritems() if value]),
                                 start_date=form.cleaned_data['start_date'].strftime('%Y-%m-%d'),
                                 end_date=form.cleaned_data['end_date'].strftime('%Y-%m-%d'),
-                                start_index=1, max_results=11)
+                                start_index=1, max_results=25)
                                 
             parameters = [('ids', 'ga:%s' % form.cleaned_data['profiles']), 
                             ('dimensions', ','.join(['%s' % d.name for d in form.cleaned_data['dimensions']])),
